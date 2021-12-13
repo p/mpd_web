@@ -9,12 +9,12 @@ class Mpd
   end
 
   def toggle
-    mpc 'toggle'
-    @@state = @@state == :playing ? :paused : :playing
+    mpd_client.pause
+    @@state = mpd_client.status.fetch('state') == 'play'
   end
 
   def play
-    mpc 'play'
+    mpd_client.play
     @@state = :playing
   end
 
@@ -24,16 +24,16 @@ class Mpd
   end
 
   def pause
-    mpc 'pause'
+    mpd_client.pause(1)
     @@state =  :paused
   end
 
   def prev
-    mpc 'prev'
+    mpd_client.previous
   end
 
   def next
-    mpc 'next'
+    mpd_client.next
   end
 
   def add(path)
