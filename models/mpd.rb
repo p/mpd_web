@@ -49,7 +49,7 @@ class Mpd
   end
 
   def volume=(vol)
-    mpc "volume #{vol}"
+    mpd_client.volume(vol)
   end
 
   def volume
