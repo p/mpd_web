@@ -49,11 +49,11 @@ class Mpd
   end
 
   def volume=(vol)
-    mpd_client.volume(vol)
+    mpd_client.setvol(vol)
   end
 
   def volume
-    mpd_client.status['volume'] || '--'
+    mpd_client.getvol || '--'
   end
 
   def current

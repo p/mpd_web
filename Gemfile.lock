@@ -1,3 +1,8 @@
+PATH
+  remote: ../mpd_client
+  specs:
+    mpd_client (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,7 +41,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     lumberjack (1.2.8)
     method_source (1.0.0)
-    mpd_client (0.1.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -104,7 +108,7 @@ DEPENDENCIES
   guard-sass
   haml
   json
-  mpd_client
+  mpd_client!
   puma
   rack-test
   rspec
