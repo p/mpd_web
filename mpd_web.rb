@@ -3,6 +3,10 @@ require "#{APP_PATH}/config/env"
 
 class MpdWeb < Sinatra::Base
 
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   require "#{APP_PATH}/helpers/view_helpers"
   include ViewHelpers
 
@@ -16,7 +20,7 @@ class MpdWeb < Sinatra::Base
 
   get "/" do
     @playlist = mpd.playlist
-    @artists = mpd.artists
+    @artists = []#mpd.artists
     haml :index
   end
 
@@ -79,7 +83,7 @@ class MpdWeb < Sinatra::Base
     mpd.volume = volume
     redirect "/"
   end
-  
+
   post "/artist_songs" do
     songs = mpd.artist_songs params[:artist]
     content_type :json

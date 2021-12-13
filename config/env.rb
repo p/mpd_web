@@ -3,6 +3,7 @@ require 'bundler/setup'
 Bundler.require :default
 
 require 'sinatra/base'
+require 'sinatra/reloader' if development?
 
 Dir.glob("#{APP_PATH}/models/*").each do |model|
   require model

@@ -3,7 +3,10 @@ source 'https://rubygems.org'
 gem 'puma'
 gem "json"
 gem "sinatra"
+gem 'sinatra-contrib'
 gem "haml"
+gem 'mpd_client'
+gem 'shotgun'
 
 group :development do
   gem "guard"

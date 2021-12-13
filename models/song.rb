@@ -4,11 +4,21 @@ class Song
 
   attr_reader :name, :artist, :type, :album, :path, :album_path
 
-  def initialize(type, string)
+  def initialize(type, info)
     case type
     when :label
-      split = string.split(" - ")
-      @artist, @name = split
+      @file = info['file']
+      @last_modified = info['last-modified']
+      @format = info['format']
+      @name = @title = info['title']
+      @artist = info['artist']
+      @album = info['album']
+      @track = info['track']
+      @date = info['date']
+      @genre = info['genre']
+      @duration = info['duration']
+      @pos = info.fetch('pos')
+      @id = info.fetch('id')
       @type = :playlist
     when :path
       database_infos string

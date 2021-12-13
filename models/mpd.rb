@@ -53,12 +53,7 @@ class Mpd
   end
 
   def volume
-    if mpc('volume')
-      mpc('volume') =~ /([0-9]+)/
-      $1
-    else
-      50
-    end
+    mpd_client.status['volume'] || '--'
   end
 
   def current
@@ -102,9 +97,11 @@ class Mpd
   end
 
   def playlist
-    list_songs :label, mpc("playlist")
+    mpd_client.playlistinfo.map do |song|
+      Song.new :label, song
+    end
   end
-  
+
   def artist_songs(artist)
     mpc("list artist #{artist}").encode("UTF-8", invalid: :replace, undef: :replace)
   end
@@ -116,10 +113,9 @@ class Mpd
   end
 
   def list_songs(type, string)
-    string = string.encode("UTF-8", invalid: :replace, undef: :replace)
-    songs = string.split("\n")
-    songs.map do |song|
-      Song.new type, song
-    end
+  end
+
+  def mpd_client
+    @mpd_client ||= MPD::Client.connect('musk')
   end
 end
