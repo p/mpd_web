@@ -1,3 +1,3 @@
 guard 'sass', :input => 'sass', :output => 'public/css'
 
-guard 'coffeescript', :input => 'coffee', :output => 'public/js'
+guard 'coffeescript', input: 'coffee', output: 'public/js', patterns: [/\.coffee\z/]
