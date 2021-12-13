@@ -1,7 +1,6 @@
 log = (msg) -> console.log msg if console
   
 
-
 # events
 
 post = (method, attrs={}, callback) ->

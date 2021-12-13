@@ -1,6 +1,6 @@
 body {
-  background: #222222;
-  color: #eeeeee;
+  background: #222;
+  color: #EEE;
   font-family: Geneva, Arial, Verdana; }
 
 ul {
@@ -12,11 +12,11 @@ li {
   margin: 0; }
 
 a {
-  color: white;
+  color: #FFF;
   text-decoration: none; }
 
 a:hover {
-  color: #cccccc;
+  color: #CCC;
   text-decoration: underline; }
 
 #container {
@@ -28,26 +28,26 @@ a:hover {
   font-size: 1.5em;
   padding: 5px 10px;
   border-radius: 10px;
-  background: #555555;
-  border: 1px solid #aaaaaa; }
+  background: #555;
+  border: 1px solid #AAA; }
 #player a:hover {
-  background: #bbbbbb;
-  color: #444444;
+  background: #BBB;
+  color: #444;
   text-decoration: none; }
 
 .crop {
-  background: #555555;
+  background: #555;
   padding: 4px 10px;
   font-size: 0.6em;
   border-radius: 10px; }
 
 .playlist a.del {
-  color: #990000;
+  color: #900;
   padding: 0 6px 3px 5px;
   font-weight: bold; }
 .playlist a.del:hover {
-  background: #990000;
-  color: white;
+  background: #900;
+  color: #FFF;
   text-decoration: none; }
 
 .current_track {
@@ -56,6 +56,6 @@ a:hover {
 
 .volume {
   display: inline-block;
-  background: #777777;
+  background: #777;
   padding: 3px 5px 0;
   border-radius: 5px; }

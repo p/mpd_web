@@ -2,14 +2,20 @@
   var get_current_track, log, post, refresh, song_view;
 
   log = function(msg) {
-    if (console) return console.log(msg);
+    if (console) {
+      return console.log(msg);
+    }
   };
 
   post = function(method, attrs, callback) {
-    if (attrs == null) attrs = {};
+    if (attrs == null) {
+      attrs = {};
+    }
     return $.post("/" + method, attrs, function(data) {
       log("post: " + method);
-      if (callback) return callback(data);
+      if (callback) {
+        return callback(data);
+      }
     });
   };
 
@@ -89,7 +95,7 @@
   song_view = function(data) {
     var album;
     album = data.album ? "- " + data.album + " " : "";
-    return "" + data.artist + " " + album + "- " + data.name;
+    return data.artist + " " + album + "- " + data.name;
   };
 
 }).call(this);

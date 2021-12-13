@@ -28,7 +28,9 @@ class MpdWeb < Sinatra::Base
     content_type :json
 
     if mpd.current
-      mpd.current.attributes.to_json
+      mpd.current.tap do |info|
+        info['name'] = info['title']
+      end.to_json
     else
       {}.to_json
     end

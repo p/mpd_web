@@ -57,7 +57,7 @@ class Mpd
   end
 
   def current
-    list_songs(:label, mpc("current")).first
+    mpd_client.currentsong
   end
 
   def track
