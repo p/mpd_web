@@ -2,3 +2,4 @@
 mpd/test/*
 mpd/*
 .redcar
+.sass-cache
