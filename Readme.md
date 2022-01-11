@@ -36,9 +36,20 @@ osx:
 
 mpd configs
 
+https://mpd.readthedocs.io/en/latest/protocol.html
 http://ubuntuforums.org/archive/index.php/t-71949.html
 http://mpd.wikia.com/wiki/Configuration
 
 man pages
 
 http://linux.die.net/man/1/mpc
+
+### other software
+
+Ruby:
+- https://github.com/mamantoha/mpd_client
+- https://github.com/Nondv/ruby-mpd-client
+
+- https://github.com/werkshy/pickup
+- https://github.com/ambientsound/pms
+- https://mpd.fandom.com/wiki/Clients
